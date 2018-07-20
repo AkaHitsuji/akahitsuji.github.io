@@ -1,0 +1,48 @@
+/* Profile images */
+.myImages {
+    width: 100%;
+}
+
+/* Column block */
+.col-block {
+    flex-wrap: wrap;
+    /* display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap; */
+    justify-content: space-around;
+    }
+
+/* .blocks {
+    box-sizing: border-box;
+    } */
+
+.left-col-block {
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    }
+
+.right-col-block {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.23);
+    }
+
+@media (max-width: 600px) {
+    .left-col-block {
+        width: 100%;
+        position: relative;
+        }
+
+    .right-col-block {
+        width: 100%;
+        position: relative;
+        box-shadow: none;
+        }
+    }
