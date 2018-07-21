@@ -92,14 +92,14 @@ img.top {
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-direction: alternate;
-    background-image: url(../img/testimg1.jpg);
+    background-image: url(https://akahitsuji.github.io/img/testimg1.jpg);
     background-size: cover;
     background-position: center top;
     background-color: blue;
 }
 
 img.bottom {
-    background-image: url(../img/testimg2.jpg);
+    background-image: url(https://akahitsuji.github.io/img/testimg2.jpg);
     background-size: cover;
     background-position: center top;
 }
