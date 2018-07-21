@@ -21,7 +21,7 @@
     overflow: hidden;
     position: fixed;
     left: 0;
-    }
+}
 
 .right-col-block {
     width: 50%;
@@ -33,6 +33,7 @@
 @media (max-width: 600px) {
     .left-col-block {
         width: 100%;
+        height:100%;
         position: relative;
         }
 
@@ -45,14 +46,34 @@
 
 /* Profile images */
 section {
-    display:block;
-    position:relative;
+    display: block;
+    position: relative;
 }
+
 section img {
     position:absolute;
     left:0;
     width:100%;
+    background-size: cover;
+    z-index: -1;
 }
+
+/* section img:before {
+    content    : "";
+    position   : absolute;
+    left       : 0;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    background : linear-gradient(
+            -30deg,
+            rgba(245, 84, 42, 0.5) 0%,
+            rgba(245, 84, 42, 0.5) 20%,
+            transparent 60%,
+            transparent 100%
+    );
+
+    } */
 
 @keyframes FadeInOut {
     0% {
@@ -75,4 +96,66 @@ img.top {
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-direction: alternate;
+}
+
+/* header */
+.header-content {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10%;
+}
+
+.header-content h1 {
+    font-family: 'Open Sans';
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    /* text-shadow:
+       -2px -2px 0 rgba(255, 255, 255, .2),
+        2px -2px 0 rgba(255, 255, 255, .2),
+        -2px 2px 0 rgba(255, 255, 255, .2),
+         2px 2px 0 rgba(255, 255, 255, .2); */
+    line-height: 1;
+    margin: 0;
+}
+
+.header-content p {
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.header-content .social {
+    margin: 0;
+    padding: 10px;
+    display: block;
+}
+
+.header-content .social li {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.header-content .social li a {
+    display: block;
+    width: 42px;
+    height: 42px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, .0);
+    }
+
+.header-content .social li a:hover {
+    border-color : #ffffff;
 }
