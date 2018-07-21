@@ -159,3 +159,13 @@ img.top {
 .header-content .social li a:hover {
     border-color : #ffffff;
 }
+
+@media (max-width : 600px) {
+    section img {
+        z-index: 1;
+    }
+
+    .header-content {
+        z-index: 2;
+    }
+}
