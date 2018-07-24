@@ -255,3 +255,7 @@ img.bottom {
     font-weight: 200;
     margin-bottom: 5px;
 }
+
+.experience-card p {
+    white-space: pre-line;
+}
