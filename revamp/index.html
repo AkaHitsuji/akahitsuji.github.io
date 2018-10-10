@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- web-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<div class="col-block">
+
+    <!-- Grocery Options -->
+    <div class="left-col-block">
+
+        <!-- Title bar -->
+        <div class="left-header">
+            <b>ShopARH:</b> Augmented Reality Helper
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+            <form action="/action_page.php">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search groceries.." name="search">
+            </form>
+        </div>
+
+        <!-- Options Display -->
+        <div class="grocery-options">
+            THIS IS THE CONTAINER FOR GROCERY OPTIONS
+        </div>
+    </div>
+
+    <!-- Grocery list -->
+    <div class="right-col-block">
+
+        <!-- Profile image -->
+        <div class="col-md-12">
+            <div class="right-profileimg">
+                <img src="img/profileimg.png" alt="profileimg">
+            </div>
+        </div>
+
+        <!-- Purchase history -->
+        <div class="col-md-12">
+            <div class="purchase-hist">
+                <form action="history.html">
+                    <button type="submit">PURCHASE HISTORY</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="col-md-12">
+            <div class="right-title">
+                MY GROCERY LIST <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+
+        <!-- save and submit button -->
+        <div class="submit-btn">
+            <form action="checkout.html">
+                <button type="submit">SAVE & SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
