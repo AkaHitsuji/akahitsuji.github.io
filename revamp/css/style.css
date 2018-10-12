@@ -1,5 +1,7 @@
-body {
+html, body {
     font-family: 'Open Sans';
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .title {
@@ -15,25 +17,25 @@ body {
 /* Column block */
 .col-block {
     display: flex;
+    width: 100%;
 
 }
 
 .left-col-block {
     width: 70%;
-    min-height: 100vh;
+    max-height: 100vh;
     text-align: center;
     overflow: hidden;
     float: left;
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: blue;
     /* background-color: #4A4A4A; */
 }
 
 .right-col-block {
     width: 30%;
-    min-height: 100vh;
+    max-height: 100vh;
     float: left;
     right: 0;
     background-color: #ECE9E8;
@@ -84,10 +86,11 @@ body {
 }
 
 .grocery-options {
+    overflow: scroll;
     height: 90%;
     width: 100%;
     bottom: 0;
-    background-color: red;
+    /* background-color: red; */
     font-size: 17px;
     font-weight: 800;
 }
@@ -146,4 +149,64 @@ body {
     font-size: 17px;
     border: none;
     cursor: pointer;
+}
+
+.grocery-card {
+    position: relative;
+    /* box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; */
+    width: 100%;
+    /* border-radius: 10px; */
+    padding: 20px;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.grocery-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.grocery-card img {
+    /* position: relative; */
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    object-fit: cover;
+}
+
+.grocery-card .grocery-title {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.grocer-card .status {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#available {
+    color: green;
+}
+
+#unavailable {
+    color: orange;
+}
+
+.list-card {
+    width: 80%;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
 }

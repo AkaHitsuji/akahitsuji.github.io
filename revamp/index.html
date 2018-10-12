@@ -14,6 +14,12 @@
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- js for dynamic search -->
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
 <div class="col-block">
@@ -36,7 +42,78 @@
 
         <!-- Options Display -->
         <div class="grocery-options">
-            THIS IS THE CONTAINER FOR GROCERY OPTIONS
+            <div class="col-md-12 container-fluid">
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13132878_XL1.jpg">
+                        <div class="grocery-title">
+                            Kee Song Chicken - Kampong
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/media.redmart.com/newmedia/1600x/i/m/2000005002007_0094_1455666654471.jpg">
+                        <div class="grocery-title">
+                            Meatlovers Tochigi Wagyu A4 Steak
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/12605904_XL1.jpg">
+                        <div class="grocery-title">
+                            Sakura Pearl Brinjal
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="col-md-12 container-fluid">
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13032618_XL1.jpg">
+                        <div class="grocery-title">
+                            Pasar Xiao Bai Chye
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13000321_XL1.jpg">
+                        <div class="grocery-title">
+                            Pasar Prepacked Carrots
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13099853_XL1.jpg">
+                        <div class="grocery-title">
+                            New Zealand Apple Bag - Royal Gala
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="col-md-12 container-fluid">
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13004610_XL1.jpg">
+                        <div class="grocery-title">
+                            Pasar Hong Kong Papaya
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4 grocery-cell">
+                    <div class="grocery-card">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/www8.fairprice.com.sg/fpol/media/images/product/XL/13052577_XL1.jpg">
+                        <div class="grocery-title">
+                            Sunkist Delite Australian Mandarins
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -53,8 +130,8 @@
         <!-- Purchase history -->
         <div class="col-md-12">
             <div class="purchase-hist">
-                <form action="history.html">
-                    <button type="submit">PURCHASE HISTORY</button>
+                <form action="HOME.html">
+                    <button type="submit">RETURN</button>
                 </form>
             </div>
         </div>
@@ -65,6 +142,13 @@
                 MY GROCERY LIST <i class="fas fa-shopping-cart"></i>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <div class="list-card">
+                Milk <br> Cereal <br> Spaghetti <br> Tomato Sauce <br> Onion <br> Canned Tomatoes <br> Pepper <br> Salt <br> Capsicum <br> Garlic <br> Bread <br> Pasta <br> Coke <br> Weed <br> Eggs <br> Rice <br> Potatoes
+            </div>
+        </div>
+
 
         <!-- save and submit button -->
         <div class="submit-btn">
