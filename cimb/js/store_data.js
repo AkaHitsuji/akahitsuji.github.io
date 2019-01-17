@@ -3,6 +3,5 @@ function store_in_session() {
     console.log(accountnum);
     sessionStorage.setItem("userid", accountnum);
 
-    // window.open("index.html","_self")
-
+    window.open("https://akahitsuji.github.io/cimb/index.html","_self")
 }
