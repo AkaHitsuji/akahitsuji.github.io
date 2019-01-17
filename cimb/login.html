@@ -26,12 +26,11 @@
     <!-- username and password input -->
     <!-- acc no, name, email, phone -->
     <form class="form">
-        <input type="text" placeholder="Account Number" id="userid">
-        <input type="text" placeholder="Name" id="username">
-        <input type="email" placeholder="Email" id="email">
-        <input type="tel" placeholder="Phone Number" id="phonenumber">
-	</form>
-    <form>
+        <input type="text" placeholder="Account Number" id="userid" name="user_id">
+        <input type="text" placeholder="Name" id="username" name="name">
+        <input type="email" placeholder="Email" id="email" name="email">
+        <input type="tel" placeholder="Phone Number" id="phonenumber" name="phone">
+
         <button type="submit" id="login-button" onclick="store_in_session()">LOGIN</button>
     </form>
 </div>
