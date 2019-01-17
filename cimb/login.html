@@ -12,6 +12,8 @@
 <!-- Style CSS -->
 <link href="css/loginstyle.css" rel="stylesheet">
 
+<!-- jquery -->
+<script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/store_data.js"></script>
 </head>
 <body>
@@ -25,13 +27,18 @@
 
     <!-- username and password input -->
     <!-- acc no, name, email, phone -->
+    <!-- <form class="form" method="post" action="https://finul-api.herokuapp.com/register"> -->
     <form class="form">
+        ACCOUNT NUMBER:
         <input type="text" placeholder="Account Number" id="userid" name="user_id">
+        NAME:
         <input type="text" placeholder="Name" id="username" name="name">
+        EMAIL:
         <input type="email" placeholder="Email" id="email" name="email">
+        PHONE NUMBER:
         <input type="tel" placeholder="Phone Number" id="phonenumber" name="phone">
 
-        <button type="submit" id="login-button" onclick="store_in_session()">LOGIN</button>
+        <a href="index.html"><button type="submit" id="login-button" onclick="store_in_session()">LOGIN</button></a>
     </form>
 </div>
 
