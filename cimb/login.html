@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- web-fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
+
+<!-- Style CSS -->
+<link href="css/loginstyle.css" rel="stylesheet">
+
+<script src="js/store_data.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <!-- logo container -->
+    <div class="col-md-12">
+        <div class="logo">
+            <img src="img/cimb_logo_transparent.png" alt="logo">
+        </div>
+    </div>
+
+    <!-- username and password input -->
+    <!-- acc no, name, email, phone -->
+    <form class="form">
+        <input type="text" placeholder="Account Number" id="userid">
+        <input type="text" placeholder="Name" id="username">
+        <input type="email" placeholder="Email" id="email">
+        <input type="tel" placeholder="Phone Number" id="phonenumber">
+	</form>
+    <form>
+        <button type="submit" id="login-button" onclick="store_in_session()">LOGIN</button>
+    </form>
+</div>
+
+
+</body>
+</html>
