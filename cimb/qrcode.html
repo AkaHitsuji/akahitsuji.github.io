@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- web-fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
+
+<!-- Style CSS -->
+<link href="css/qrcode.css" rel="stylesheet">
+
+<!-- jquery -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <!-- logo container -->
+    <div class="col-md-12">
+        <div class="logo">
+            <img src="img/cimb_logo_transparent.png" alt="logo">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="qrcode-container">
+            <div id="qrcode"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), "This is a long long long code");
+    </script>
+
+</div>
+
+
+</body>
+</html>

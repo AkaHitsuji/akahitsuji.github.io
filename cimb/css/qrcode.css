@@ -1,0 +1,61 @@
+body {
+    font-family: 'Open Sans';
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    vertical-align: top;
+    margin-bottom: 10px;
+    color: #A72710;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 30px;
+}
+
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    /* float: left; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+.logo {
+    margin-top: 5%;
+    height: 10%;
+    width: 100%;
+    padding-bottom: 30px;
+    /* top: 0; */
+}
+
+.logo img {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    vertical-align: bottom;
+}
+
+.qrcode-container {
+    width: 100%;
+    text-align: center;
+}
+
+#qrcode {
+    margin-left: 40%;
+    margin-right: 60%;
+    width:100px;
+    height:100px;
+    margin-top:15px;
+}
