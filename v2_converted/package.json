@@ -1,0 +1,17 @@
+{
+  "name": "yang-ang-website",
+  "version": "1.0.0",
+  "description": "Yang Ang's personal website with Markdown-based static site generator",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.10",
+    "marked": "^9.1.5",
+    "chokidar": "^3.5.3"
+  }
+} 

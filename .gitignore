@@ -31,8 +31,18 @@ yarn-error.log*
 .vscode/
 *.swp
 *.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Jekyll
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# macOS
+.AppleDouble
+.LSOverride
+._*

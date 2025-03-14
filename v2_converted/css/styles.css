@@ -629,4 +629,147 @@ body {
 
 .selected-tag:hover {
     opacity: 0.9;
+}
+
+/* Detail Page Styles */
+.detail-page {
+    padding: 120px 0 60px;
+}
+
+.detail-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.detail-header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.detail-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.detail-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.detail-content h2 {
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.detail-content h3 {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.detail-content p {
+    margin-bottom: 1.5rem;
+}
+
+.detail-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.detail-content ul, 
+.detail-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.detail-content li {
+    margin-bottom: 0.5rem;
+}
+
+.detail-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.detail-content pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.detail-content code {
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.detail-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--primary-color-dark);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--primary-color-dark);
+}
+
+@media (max-width: 768px) {
+    .detail-page {
+        padding: 100px 0 40px;
+    }
+    
+    .detail-header h1 {
+        font-size: 2rem;
+    }
+    
+    .detail-content {
+        font-size: 1rem;
+    }
 } 
