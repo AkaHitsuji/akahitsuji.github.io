@@ -29,6 +29,15 @@
     --accent-color: rgba(202, 135, 226, 1);
 }
 
+body[data-theme="purple"] {
+    background-color: rgba(30, 15, 40, 1);
+    color: rgba(220, 190, 230, 1);
+}
+
+html[data-theme="purple"] {
+    background-color: rgba(30, 15, 40, 1);
+}
+
 /* System theme */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -209,5 +218,14 @@
         width: 140px;
         max-width: 90vw;
         position: fixed;
+        top: auto;
+        margin-top: 8px;
+        z-index: 1010;
+    }
+    
+    .mobile-nav .theme-dropdown {
+        position: fixed;
+        top: auto;
+        margin-top: 8px;
     }
 } 

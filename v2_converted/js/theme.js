@@ -67,17 +67,21 @@ class ThemeManager {
 
     applyTheme(theme) {
         const root = document.documentElement;
+        const body = document.body;
         
         // Remove any existing theme
         root.removeAttribute('data-theme');
+        body.removeAttribute('data-theme');
 
         if (theme === 'system') {
             // Apply system preference
             const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             root.setAttribute('data-theme', systemTheme);
+            body.setAttribute('data-theme', systemTheme);
         } else {
             // Apply selected theme
             root.setAttribute('data-theme', theme);
+            body.setAttribute('data-theme', theme);
         }
 
         // Update all theme toggle icons
