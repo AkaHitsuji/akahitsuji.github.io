@@ -1,6 +1,3 @@
-# ignore /v2_nextjs for now
-v2_nextjs/
-
 # Dependencies
 node_modules/
 /.pnp
