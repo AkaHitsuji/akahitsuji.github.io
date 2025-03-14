@@ -77,13 +77,7 @@ function processTimelineFiles() {
                 ${hasContent && attributes.detailPage ? `
                 <div class="timeline-footer">
                   <a href="${attributes.detailPage}" class="read-more">Read more</a>
-                  <div class="timeline-tags">
-                    ${(attributes.tags || []).slice(0, 2).map(tag => `<span class="tag">${tag}</span>`).join('')}
-                  </div>
-                </div>` : `
-                <div class="timeline-tags">
-                  ${(attributes.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
-                </div>`}
+                </div>` : ``}
             </div>
         </div>
     </div>`;
