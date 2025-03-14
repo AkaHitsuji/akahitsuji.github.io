@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yang Ang</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/theme.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Yang Ang</a>
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <div class="theme-toggle-container">
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <svg class="palette-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="4"/></svg>
+                    </button>
+                    <div class="theme-dropdown">
+                        <button class="theme-option" data-theme="light">Light</button>
+                        <button class="theme-option" data-theme="dark">Dark</button>
+                        <button class="theme-option" data-theme="purple">Dark Purple</button>
+                        <button class="theme-option" data-theme="system">System</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="mobile-nav">
+                <div class="theme-toggle-container">
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <svg class="palette-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="4"/></svg>
+                    </button>
+                    <div class="theme-dropdown">
+                        <button class="theme-option" data-theme="light">Light</button>
+                        <button class="theme-option" data-theme="dark">Dark</button>
+                        <button class="theme-option" data-theme="purple">Dark Purple</button>
+                        <button class="theme-option" data-theme="system">System</button>
+                    </div>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <nav>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#blog" class="nav-link">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="img/placeholder.svg" alt="Yang Ang" class="profile-image">
+                    </div>
+                    <div class="hero-text">
+                        <h1>Yang Ang</h1>
+                        <p class="hero-description">Passionate developer building innovative solutions for tomorrow's challenges.</p>
+                        <div class="hero-details">
+                            <div class="detail-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Senior Frontend Developer at HealthTech Solutions</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>B.S. Computer Science, MIT (2016)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Berlin, Germany</span>
+                            </div>
+                        </div>
+                        <div class="hero-social">
+                            <a href="https://github.com/AkaHitsuji" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/yang-ang-025/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:yang_amethyst@hotmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <div class="hero-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="section">
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="timeline-filter">
+                    <button class="filter-button">
+                        <i class="fas fa-filter"></i>
+                        Filter
+                    </button>
+                    <div class="selected-tags"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">May 2016</div>
+                        <div class="timeline-content">
+                            <h3>College Graduation</h3>
+                            <p>Graduated with a Bachelor's degree in Computer Science from MIT.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Education</span>
+                                <span class="tag">Computer Science</span>
+                                <span class="tag">MIT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2016</div>
+                        <div class="timeline-content">
+                            <h3>First Developer Role</h3>
+                            <p>Joined TechCorp as a Junior Frontend Developer.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Career</span>
+                                <span class="tag">Frontend</span>
+                                <span class="tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">March 2018</div>
+                        <div class="timeline-content">
+                            <h3>Joined a Startup</h3>
+                            <p>Took a risk and joined an early-stage startup as a Full Stack Developer.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Career</span>
+                                <span class="tag">Startup</span>
+                                <span class="tag">Full Stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">November 2021</div>
+                        <div class="timeline-content">
+                            <h3>Side Project Success</h3>
+                            <p>Launched a side project that reached 10,000 users in the first month.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Side Project</span>
+                                <span class="tag">Product Hunt</span>
+                                <span class="tag">Success</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2022</div>
+                        <div class="timeline-content">
+                            <h3>Current Role</h3>
+                            <p>Leading the frontend team at a health tech company.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Career</span>
+                                <span class="tag">Leadership</span>
+                                <span class="tag">Health Tech</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">September 2023</div>
+                        <div class="timeline-content">
+                            <h3>First Conference Talk</h3>
+                            <p>Gave my first talk at a major tech conference about frontend architecture.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Speaking</span>
+                                <span class="tag">Conference</span>
+                                <span class="tag">Frontend</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">March 2023</div>
+                        <div class="timeline-content">
+                            <h3>Hackathon Victory</h3>
+                            <p>Won first place at the Berlin Tech Hackathon with an AI-powered accessibility tool.</p>
+                            <div class="timeline-tags">
+                                <span class="tag">Hackathon</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">Accessibility</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <!-- Blog section content -->
+        </section>
+    </main>
+
+</body>
+</html> 
