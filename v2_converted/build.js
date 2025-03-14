@@ -74,10 +74,16 @@ function processTimelineFiles() {
             <div class="timeline-content-inner">
                 <h3>${attributes.title}</h3>
                 <p>${attributes.summary || ''}</p>
-                ${hasContent && attributes.detailPage ? `<a href="${attributes.detailPage}" class="read-more">Read More</a>` : ''}
+                ${hasContent && attributes.detailPage ? `
+                <div class="timeline-footer">
+                  <a href="${attributes.detailPage}" class="read-more">Read more</a>
+                  <div class="timeline-tags">
+                    ${(attributes.tags || []).slice(0, 2).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                  </div>
+                </div>` : `
                 <div class="timeline-tags">
-                    ${(attributes.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
-                </div>
+                  ${(attributes.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>`}
             </div>
         </div>
     </div>`;
@@ -115,20 +121,20 @@ function generateDetailPage(attributes, content) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${attributes.title} - Yang Ang</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="/js/theme.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <header class="navbar">
         <div class="container">
-            <a href="/" class="logo">Yang Ang</a>
+            <a href="../" class="logo">Yang Ang</a>
             <nav class="desktop-nav">
-                <a href="/#home" class="nav-link">Home</a>
-                <a href="/#timeline" class="nav-link">Timeline</a>
-                <a href="/#blog" class="nav-link">Blog</a>
+                <a href="../#home" class="nav-link">Home</a>
+                <a href="../#timeline" class="nav-link">Timeline</a>
+                <a href="../#blog" class="nav-link">Blog</a>
                 <div class="theme-toggle-container">
                     <button class="theme-toggle" aria-label="Toggle theme">
                         <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -164,28 +170,48 @@ function generateDetailPage(attributes, content) {
     </header>
 
     <div class="mobile-menu">
-        <a href="/#home" class="nav-link">Home</a>
-        <a href="/#timeline" class="nav-link">Timeline</a>
-        <a href="/#blog" class="nav-link">Blog</a>
+        <a href="../#home" class="nav-link">Home</a>
+        <a href="../#timeline" class="nav-link">Timeline</a>
+        <a href="../#blog" class="nav-link">Blog</a>
     </div>
 
     <main class="detail-page">
         <div class="container">
-            <div class="detail-header">
-                <h1>${attributes.title}</h1>
+            <button class="back-link" onclick="handleBack(event)">
+                <i class="fas fa-arrow-left"></i> Back to timeline
+            </button>
+            
+            <div id="detail-content" class="detail-content-wrapper">
+                <div class="detail-header">
+                    <div class="detail-image-container">
+                        <img src="${attributes.image ? '../' + attributes.image : '../img/placeholder.svg'}" alt="${attributes.title}" class="detail-image">
+                        <div class="detail-image-overlay"></div>
+                        <div class="detail-title-container">
+                            <div class="detail-date-badge">
+                                <i class="fas fa-calendar"></i>
+                                ${attributes.date}
+                            </div>
+                            <h1>${attributes.title}</h1>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="detail-meta">
-                    <span class="detail-date"><i class="fas fa-calendar"></i> ${attributes.date}</span>
                     ${attributes.tags ? `
                     <div class="detail-tags">
                         ${attributes.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>` : ''}
                 </div>
-            </div>
-            <div class="detail-content">
-                ${content}
-            </div>
-            <div class="detail-footer">
-                <a href="/#timeline" class="back-link"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+                
+                <div class="detail-content">
+                    ${content}
+                </div>
+                
+                <div class="detail-footer">
+                    <button class="back-link" onclick="handleBack(event)">
+                        <i class="fas fa-arrow-left"></i> Back to timeline
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -195,6 +221,28 @@ function generateDetailPage(attributes, content) {
             <p>&copy; ${new Date().getFullYear()} Yang Ang. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Add entrance animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailContent = document.getElementById('detail-content');
+            setTimeout(() => {
+                detailContent.classList.add('animate-in');
+            }, 100);
+        });
+        
+        // Handle back button click with animation
+        function handleBack(e) {
+            e.preventDefault();
+            const detailContent = document.getElementById('detail-content');
+            detailContent.classList.remove('animate-in');
+            detailContent.classList.add('animate-out');
+            
+            setTimeout(() => {
+                window.location.href = '../#timeline';
+            }, 300);
+        }
+    </script>
 </body>
 </html>`;
 

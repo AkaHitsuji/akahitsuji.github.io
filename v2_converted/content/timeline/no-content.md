@@ -8,5 +8,4 @@ tags:
 hashtags:
   - Test
 summary: This is a timeline entry without any content.
-detailPage: pages/no-content.html
 --- 

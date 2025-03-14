@@ -6,6 +6,14 @@
     --navbar-background: rgba(255, 255, 255, 0.95);
     --border-color: #e5e7eb;
     --hover-color: #f3f4f6;
+    --heading-color: #111827;
+    --text-muted: #6b7280;
+    --tag-bg: #f3f4f6;
+    --tag-color: #4b5563;
+    --code-bg: #f3f4f6;
+    --button-bg: #f3f4f6;
+    --button-text: #1a1a1a;
+    --button-hover-bg: #e5e7eb;
 }
 
 /* Dark theme */
@@ -16,6 +24,14 @@
     --navbar-background: rgba(26, 26, 26, 0.95);
     --border-color: #374151;
     --hover-color: #2d3748;
+    --heading-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --tag-bg: #374151;
+    --tag-color: #d1d5db;
+    --code-bg: #2d3748;
+    --button-bg: #374151;
+    --button-text: #f3f4f6;
+    --button-hover-bg: #4b5563;
 }
 
 /* Dark Purple theme */
@@ -27,6 +43,14 @@
     --border-color: rgba(48, 25, 52, 1);
     --hover-color: rgba(75, 32, 83, 1);
     --accent-color: rgba(202, 135, 226, 1);
+    --heading-color: rgba(240, 210, 250, 1);
+    --text-muted: rgba(180, 150, 190, 1);
+    --tag-bg: rgba(75, 32, 83, 1);
+    --tag-color: rgba(220, 190, 230, 1);
+    --code-bg: rgba(48, 25, 52, 1);
+    --button-bg: rgba(75, 32, 83, 1);
+    --button-text: rgba(220, 190, 230, 1);
+    --button-hover-bg: rgba(100, 45, 110, 1);
 }
 
 body[data-theme="purple"] {
@@ -47,6 +71,14 @@ html[data-theme="purple"] {
         --navbar-background: rgba(26, 26, 26, 0.95);
         --border-color: #374151;
         --hover-color: #2d3748;
+        --heading-color: #f3f4f6;
+        --text-muted: #9ca3af;
+        --tag-bg: #374151;
+        --tag-color: #d1d5db;
+        --code-bg: #2d3748;
+        --button-bg: #374151;
+        --button-text: #f3f4f6;
+        --button-hover-bg: #4b5563;
     }
 }
 
@@ -58,6 +90,14 @@ html[data-theme="purple"] {
         --navbar-background: rgba(255, 255, 255, 0.95);
         --border-color: #e5e7eb;
         --hover-color: #f3f4f6;
+        --heading-color: #111827;
+        --text-muted: #6b7280;
+        --tag-bg: #f3f4f6;
+        --tag-color: #4b5563;
+        --code-bg: #f3f4f6;
+        --button-bg: #f3f4f6;
+        --button-text: #1a1a1a;
+        --button-hover-bg: #e5e7eb;
     }
 }
 

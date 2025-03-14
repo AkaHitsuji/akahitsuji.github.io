@@ -9,6 +9,5 @@ tags:
 hashtags:
   - Education
   - MIT
-summary: Graduated with a Bachelor's degree in Computer Science from MIT.
-detailPage: pages/graduation.html
+summary: Graduated with a Bachelor's degree in Computer Science from Georgia Tech!
 ---
