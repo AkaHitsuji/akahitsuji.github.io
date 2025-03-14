@@ -1,11 +1,11 @@
 ---
 title: Timeline Entry Without Content
 date: July 2016
-image: img/placeholder.svg
+image: img/timeline/placeholder-no-content.svg
 tags:
-  - Test
+  - Example
   - No Content
 hashtags:
-  - Test
-summary: This is a timeline entry without any content.
+  - Example
+summary: This is an example timeline entry without detailed content.
 --- 

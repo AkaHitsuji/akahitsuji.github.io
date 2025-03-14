@@ -1,7 +1,7 @@
 ---
 title: College Graduation
 date: May 2016
-image: img/placeholder.svg
+image: img/timeline/placeholder-graduation.svg
 tags:
   - Education
   - Computer Science
@@ -10,4 +10,5 @@ hashtags:
   - Education
   - MIT
 summary: Graduated with a Bachelor's degree in Computer Science from Georgia Tech!
+detailPage: pages/graduation.html
 ---

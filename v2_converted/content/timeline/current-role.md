@@ -1,7 +1,7 @@
 ---
 title: Current Role
 date: June 2022
-image: img/placeholder.svg
+image: img/timeline/placeholder-current-role.svg
 tags:
   - Career
   - Leadership

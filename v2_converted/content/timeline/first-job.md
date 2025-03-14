@@ -1,7 +1,7 @@
 ---
 title: First Developer Role
 date: June 2016
-image: img/placeholder.svg
+image: img/timeline/placeholder-first-job.svg
 tags:
   - Career
   - Frontend
