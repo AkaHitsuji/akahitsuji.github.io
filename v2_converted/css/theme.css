@@ -20,12 +20,13 @@
 
 /* Dark Purple theme */
 [data-theme="purple"] {
-    --background-color: #1a1a1a;
-    --text-color: #ffffff;
-    --primary-color: #a855f7;
-    --navbar-background: rgba(26, 26, 26, 0.95);
-    --border-color: #374151;
-    --hover-color: #2d3748;
+    --background-color: rgba(30, 15, 40, 1);
+    --text-color: rgba(220, 190, 230, 1);
+    --primary-color: rgba(170, 66, 173, 1);
+    --navbar-background: rgba(15, 10, 20, 0.95);
+    --border-color: rgba(48, 25, 52, 1);
+    --hover-color: rgba(75, 32, 83, 1);
+    --accent-color: rgba(202, 135, 226, 1);
 }
 
 /* System theme */
@@ -48,5 +49,165 @@
         --navbar-background: rgba(255, 255, 255, 0.95);
         --border-color: #e5e7eb;
         --hover-color: #f3f4f6;
+    }
+}
+
+/* Theme toggle and dropdown styles */
+.theme-toggle-container {
+    position: relative;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.sun-icon, .moon-icon, .palette-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+}
+
+[data-theme="light"] .sun-icon,
+:root:not([data-theme]) .sun-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+[data-theme="purple"] .palette-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 150px;
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+}
+
+.theme-dropdown.show {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+}
+
+/* Force specific colors for theme options to ensure visibility */
+.theme-option[data-theme="light"] {
+    color: #1a1a1a;
+}
+
+.theme-option[data-theme="dark"],
+.theme-option[data-theme="purple"] {
+    color: #ffffff;
+}
+
+.theme-option[data-theme="dark"] {
+    background-color: #1a1a1a;
+}
+
+.theme-option[data-theme="purple"] {
+    background-color: rgba(48, 25, 52, 1);
+}
+
+.theme-option[data-theme="system"] {
+    color: #1a1a1a;
+}
+
+.theme-option:hover {
+    background-color: var(--hover-color);
+}
+
+/* Ensure text is visible on hover for all theme options */
+.theme-option[data-theme="light"]:hover {
+    color: #1a1a1a;
+}
+
+.theme-option[data-theme="dark"]:hover,
+.theme-option[data-theme="purple"]:hover {
+    color: #ffffff;
+}
+
+.theme-option[data-theme="system"]:hover {
+    color: #1a1a1a;
+}
+
+.theme-option svg {
+    color: var(--primary-color);
+}
+
+/* Override SVG colors for better visibility */
+.theme-option[data-theme="light"] svg {
+    color: #2563eb;
+}
+
+.theme-option[data-theme="dark"] svg {
+    color: #3b82f6;
+}
+
+.theme-option[data-theme="purple"] svg {
+    color: rgba(170, 66, 173, 1);
+}
+
+.theme-option[data-theme="system"] svg {
+    color: #2563eb;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .theme-dropdown {
+        right: auto;
+        left: 0;
+        width: 140px;
+        max-width: 90vw;
+        position: fixed;
     }
 } 

@@ -1,38 +1,53 @@
 class ThemeManager {
     constructor() {
         this.theme = localStorage.getItem('theme') || 'system';
-        this.themeToggle = document.querySelector('.theme-toggle');
-        this.themeDropdown = document.querySelector('.theme-dropdown');
+        this.themeToggles = document.querySelectorAll('.theme-toggle');
+        this.themeDropdowns = document.querySelectorAll('.theme-dropdown');
         this.themeOptions = document.querySelectorAll('.theme-option');
         
         this.init();
     }
 
     init() {
-        // Set initial theme
+        // Apply the saved theme on page load
         this.applyTheme(this.theme);
-
-        // Add event listeners
-        this.themeToggle.addEventListener('click', () => {
-            this.themeDropdown.classList.toggle('show');
+        
+        // Toggle dropdowns
+        this.themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdown = toggle.nextElementSibling;
+                
+                // Close all other dropdowns first
+                this.themeDropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('show');
+                    }
+                });
+                
+                // Toggle the clicked dropdown
+                dropdown.classList.toggle('show');
+            });
         });
 
+        // Handle theme selection
         this.themeOptions.forEach(option => {
-            option.addEventListener('click', () => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const newTheme = option.dataset.theme;
                 this.setTheme(newTheme);
             });
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!this.themeToggle.contains(e.target) && !this.themeDropdown.contains(e.target)) {
-                this.themeDropdown.classList.remove('show');
-            }
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            this.themeDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
         });
 
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Handle system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
             if (this.theme === 'system') {
                 this.applyTheme('system');
             }
@@ -43,28 +58,52 @@ class ThemeManager {
         this.theme = theme;
         localStorage.setItem('theme', theme);
         this.applyTheme(theme);
-        this.themeDropdown.classList.remove('show');
+        
+        // Close all dropdowns
+        this.themeDropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+        });
     }
 
     applyTheme(theme) {
         const root = document.documentElement;
+        
+        // Remove any existing theme
         root.removeAttribute('data-theme');
 
         if (theme === 'system') {
+            // Apply system preference
             const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             root.setAttribute('data-theme', systemTheme);
         } else {
+            // Apply selected theme
             root.setAttribute('data-theme', theme);
         }
 
-        // Update theme toggle icons
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
-        const paletteIcon = document.querySelector('.palette-icon');
+        // Update all theme toggle icons
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
+        const paletteIcons = document.querySelectorAll('.palette-icon');
 
-        sunIcon.style.transform = theme === 'light' ? 'rotate(0) scale(1)' : 'rotate(-90deg) scale(0)';
-        moonIcon.style.transform = theme === 'dark' ? 'rotate(0) scale(1)' : 'rotate(90deg) scale(0)';
-        paletteIcon.style.transform = theme === 'purple' ? 'rotate(0) scale(1)' : 'rotate(90deg) scale(0)';
+        let effectiveTheme = theme;
+        if (theme === 'system') {
+            effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        sunIcons.forEach(icon => {
+            icon.style.opacity = effectiveTheme === 'light' ? '1' : '0';
+            icon.style.transform = effectiveTheme === 'light' ? 'rotate(0) scale(1)' : 'rotate(-90deg) scale(0)';
+        });
+
+        moonIcons.forEach(icon => {
+            icon.style.opacity = effectiveTheme === 'dark' ? '1' : '0';
+            icon.style.transform = effectiveTheme === 'dark' ? 'rotate(0) scale(1)' : 'rotate(90deg) scale(0)';
+        });
+
+        paletteIcons.forEach(icon => {
+            icon.style.opacity = effectiveTheme === 'purple' ? '1' : '0';
+            icon.style.transform = effectiveTheme === 'purple' ? 'rotate(0) scale(1)' : 'rotate(90deg) scale(0)';
+        });
     }
 }
 
