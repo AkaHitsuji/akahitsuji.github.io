@@ -39,20 +39,31 @@ function processTimelineFiles() {
     const content = fs.readFileSync(file, 'utf8');
     const { attributes, body } = frontMatter(content);
     
-    if (!attributes.date || !attributes.title) {
-      console.warn(`Warning: ${file} is missing required frontmatter (date or title)`);
+    // Extract year and month from filename if it follows the pattern YYYY_MM_title.md
+    const filenameMatch = path.basename(file).match(/^(\d{4})_(\d{2})_(.+)\.md$/);
+    
+    if (!attributes.start_month || !attributes.title) {
+      console.warn(`Warning: ${file} is missing required frontmatter (start_month or title)`);
       return;
     }
 
     const htmlContent = marked(body);
     const hasContent = body.trim().length > 0;
     
+    // Format date range
+    let dateDisplay = attributes.start_month;
+    if (attributes.end_month && attributes.end_month.toLowerCase() !== 'present') {
+      dateDisplay = `${attributes.start_month} - ${attributes.end_month}`;
+    } else if (attributes.end_month && attributes.end_month.toLowerCase() === 'present') {
+      dateDisplay = `${attributes.start_month} - Present`;
+    }
+    
     // Create timeline item HTML
     const timelineItem = `
     <div class="timeline-item">
         <div class="timeline-date">
             <i class="fas fa-calendar"></i>
-            ${attributes.date}
+            ${dateDisplay}
         </div>
         <div class="timeline-content">
             <div class="timeline-image">
@@ -60,10 +71,10 @@ function processTimelineFiles() {
                 <div class="timeline-image-overlay"></div>
                 <div class="timeline-mobile-date">
                     <i class="fas fa-calendar"></i>
-                    ${attributes.date}
+                    ${dateDisplay}
                 </div>
                 <div class="timeline-hashtags">
-                    ${(attributes.hashtags || []).map(tag => `
+                    ${(attributes.tags || []).map(tag => `
                     <span class="tag">
                         <i class="fas fa-hashtag"></i>
                         ${tag}
@@ -82,14 +93,16 @@ function processTimelineFiles() {
         </div>
     </div>`;
     
+    // Use start_month for sorting, fallback to date for backward compatibility
+    const dateStr = attributes.start_month || attributes.date;
     timelineItems.push({
-      date: new Date(attributes.date),
+      date: new Date(dateStr),
       html: timelineItem
     });
     
     // If there's a detail page and content, generate it
     if (hasContent && attributes.detailPage) {
-      generateDetailPage(attributes, htmlContent);
+      generateDetailPage(attributes, htmlContent, dateDisplay);
     }
   });
 
@@ -100,7 +113,7 @@ function processTimelineFiles() {
 }
 
 // Generate a detail page for a timeline entry
-function generateDetailPage(attributes, content) {
+function generateDetailPage(attributes, content, dateDisplay) {
   if (!attributes.detailPage) return;
   
   const detailPagePath = path.join(__dirname, attributes.detailPage);
@@ -209,7 +222,7 @@ function generateDetailPage(attributes, content) {
                         <div class="detail-title-container">
                             <div class="detail-date-badge">
                                 <i class="fas fa-calendar"></i>
-                                ${attributes.date}
+                                ${dateDisplay}
                             </div>
                             <h1>${attributes.title}</h1>
                         </div>

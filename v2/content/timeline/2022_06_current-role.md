@@ -1,14 +1,12 @@
 ---
 title: Current Role
-date: June 2022
+start_month: June 2022
+end_month: Present
 image: img/timeline/placeholder-current-role.svg
 tags:
   - Career
   - Leadership
   - Health Tech
-hashtags:
-  - Career
-  - Leadership
 summary: Leading the frontend team at HealthTech Innovations, focusing on patient-centered healthcare solutions.
 detailPage: pages/current-role.html
 ---
