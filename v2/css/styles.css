@@ -53,6 +53,17 @@ body {
     font-weight: bold;
     color: var(--text-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color var(--transition-duration);
+}
+
+.logo:hover {
+    color: var(--primary-color);
+}
+
+.logo i {
+    font-size: 1.75rem;
 }
 
 /* Navigation */
@@ -198,10 +209,17 @@ body {
 
 .section .container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 #home {
     padding-top: var(--navbar-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* Media Queries */
@@ -229,8 +247,9 @@ body {
     align-items: center;
     max-width: 80rem;
     margin: 0 auto;
-    padding: 2rem 0;
-    min-height: calc(100vh - var(--navbar-height));
+    padding: 2rem 0 0.5rem;
+    flex: 1;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -251,14 +270,20 @@ body {
     height: 16rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--background-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 6px solid var(--profile-border-color);
+    box-shadow: 0 8px 16px var(--profile-shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (min-width: 768px) {
     .profile-image {
-        width: 20rem;
-        height: 20rem;
+        width: 24rem;
+        height: 24rem;
+    }
+    
+    .profile-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 20px var(--profile-shadow-color);
     }
 }
 
@@ -274,11 +299,84 @@ body {
     }
 }
 
+@media (max-width: 767px) {
+    .hero-text h1 {
+        text-align: center;
+    }
+    
+    .hero-description {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-social {
+        justify-content: center;
+    }
+    
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .hero-content {
+        min-height: auto;
+        padding: 1.5rem 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .scroll-to-explore {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+        bottom: 0;
+        padding-bottom: 2rem;
+    }
+    
+    .scroll-btn {
+        padding-bottom: 1.5rem;
+    }
+    
+    .scroll-btn i {
+        font-size: 1.4rem;
+    }
+
+    .profile-image {
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem 0;
+    }
+
+    .hero-details {
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-social {
+        margin-bottom: 0.75rem;
+    }
+    
+    #home {
+        padding-top: calc(var(--navbar-height) + 0.5rem);
+        min-height: 100vh;
+        justify-content: space-between;
+    }
+    
+    #home .container {
+        justify-content: space-between;
+        min-height: calc(100vh - var(--navbar-height));
+        padding-bottom: 0;
+    }
+}
+
 .hero-description {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--text-color);
     opacity: 0.8;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .hero-details {
@@ -984,5 +1082,67 @@ body {
 @media (max-width: 768px) {
     .footer {
         padding: 1.5rem 0;
+    }
+}
+
+/* Scroll to explore button */
+.scroll-to-explore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 1rem;
+}
+
+.scroll-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem;
+}
+
+.scroll-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.scroll-btn span {
+    margin-bottom: 0.5rem;
+}
+
+.scroll-btn i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Bounce animation */
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        min-height: auto;
     }
 } 

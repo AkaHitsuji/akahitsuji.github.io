@@ -14,6 +14,8 @@
     --button-bg: #f3f4f6;
     --button-text: #1a1a1a;
     --button-hover-bg: #e5e7eb;
+    --profile-border-color: #2563eb;
+    --profile-shadow-color: rgba(37, 99, 235, 0.3);
 }
 
 /* Dark theme */
@@ -32,6 +34,8 @@
     --button-bg: #374151;
     --button-text: #f3f4f6;
     --button-hover-bg: #4b5563;
+    --profile-border-color: #3b82f6;
+    --profile-shadow-color: rgba(59, 130, 246, 0.3);
 }
 
 /* Dark Purple theme */
@@ -51,6 +55,8 @@
     --button-bg: rgba(75, 32, 83, 1);
     --button-text: rgba(220, 190, 230, 1);
     --button-hover-bg: rgba(100, 45, 110, 1);
+    --profile-border-color: rgba(170, 66, 173, 1);
+    --profile-shadow-color: rgba(170, 66, 173, 0.3);
 }
 
 body[data-theme="purple"] {
@@ -79,6 +85,8 @@ html[data-theme="purple"] {
         --button-bg: #374151;
         --button-text: #f3f4f6;
         --button-hover-bg: #4b5563;
+        --profile-border-color: #3b82f6;
+        --profile-shadow-color: rgba(59, 130, 246, 0.3);
     }
 }
 
@@ -98,6 +106,8 @@ html[data-theme="purple"] {
         --button-bg: #f3f4f6;
         --button-text: #1a1a1a;
         --button-hover-bg: #e5e7eb;
+        --profile-border-color: #2563eb;
+        --profile-shadow-color: rgba(37, 99, 235, 0.3);
     }
 }
 
@@ -268,4 +278,10 @@ html[data-theme="purple"] {
         top: auto;
         margin-top: 8px;
     }
+}
+
+/* Apply theme-specific profile picture styles */
+.profile-image {
+    border-color: var(--profile-border-color);
+    box-shadow: 0 8px 16px var(--profile-shadow-color);
 } 

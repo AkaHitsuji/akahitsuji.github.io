@@ -7,6 +7,8 @@ class NavigationManager {
         this.filterButton = document.querySelector('.filter-button');
         this.selectedTags = document.querySelector('.selected-tags');
         this.timelineItems = document.querySelectorAll('.timeline-item');
+        this.scrollBtn = document.querySelector('.scroll-btn');
+        this.logoHomeLink = document.querySelector('.logo');
         this.allTags = new Set();
         
         this.init();
@@ -23,7 +25,7 @@ class NavigationManager {
             this.toggleMobileMenu();
         });
 
-        // Handle smooth scrolling
+        // Handle smooth scrolling for nav links
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -31,6 +33,24 @@ class NavigationManager {
                 this.scrollToSection(targetId);
             });
         });
+
+        // Handle scroll button click
+        if (this.scrollBtn) {
+            this.scrollBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = this.scrollBtn.getAttribute('href').substring(1);
+                this.scrollToSection(targetId);
+            });
+        }
+
+        // Handle logo home link click
+        if (this.logoHomeLink) {
+            this.logoHomeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = this.logoHomeLink.getAttribute('href').substring(1);
+                this.scrollToSection(targetId);
+            });
+        }
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {

@@ -1,6 +1,7 @@
 class ThemeManager {
     constructor() {
-        this.theme = localStorage.getItem('theme') || 'system';
+        // Set default theme to purple if no theme is saved
+        this.theme = localStorage.getItem('theme') || 'purple';
         this.themeToggles = document.querySelectorAll('.theme-toggle');
         this.themeDropdowns = document.querySelectorAll('.theme-dropdown');
         this.themeOptions = document.querySelectorAll('.theme-option');
