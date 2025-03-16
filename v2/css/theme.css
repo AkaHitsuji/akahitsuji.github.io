@@ -1,6 +1,7 @@
 /* Light theme */
 :root {
     --background-color: #ffffff;
+    --background-rgb: 255, 255, 255;
     --text-color: #1a1a1a;
     --primary-color: #2563eb;
     --navbar-background: rgba(255, 255, 255, 0.95);
@@ -21,6 +22,7 @@
 /* Dark theme */
 [data-theme="dark"] {
     --background-color: #1a1a1a;
+    --background-rgb: 26, 26, 26;
     --text-color: #ffffff;
     --primary-color: #3b82f6;
     --navbar-background: rgba(26, 26, 26, 0.95);
@@ -41,6 +43,7 @@
 /* Dark Purple theme */
 [data-theme="purple"] {
     --background-color: rgba(30, 15, 40, 1);
+    --background-rgb: 30, 15, 40;
     --text-color: rgba(220, 190, 230, 1);
     --primary-color: rgba(170, 66, 173, 1);
     --navbar-background: rgba(15, 10, 20, 0.95);
@@ -72,6 +75,7 @@ html[data-theme="purple"] {
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
         --background-color: #1a1a1a;
+        --background-rgb: 26, 26, 26;
         --text-color: #ffffff;
         --primary-color: #3b82f6;
         --navbar-background: rgba(26, 26, 26, 0.95);
@@ -93,6 +97,7 @@ html[data-theme="purple"] {
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
         --background-color: #ffffff;
+        --background-rgb: 255, 255, 255;
         --text-color: #1a1a1a;
         --primary-color: #2563eb;
         --navbar-background: rgba(255, 255, 255, 0.95);
