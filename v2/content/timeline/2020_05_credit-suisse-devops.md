@@ -2,7 +2,6 @@
 title: Software Engineer (Infrastructure/DevOps) at Credit Suisse
 start_month: May 2020
 end_month: May 2021
-image: img/timeline/placeholder.svg
 tags:
   - DevOps
   - Engineering

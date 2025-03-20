@@ -703,6 +703,39 @@ body {
     padding: 1rem;
 }
 
+/* Styles for timeline cards without image */
+.timeline-content-inner.no-image {
+    padding: 1.5rem;
+    position: relative; /* Establish positioning context */
+}
+
+.timeline-content-inner.no-image .timeline-mobile-date {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    margin-bottom: 1.5rem;
+    z-index: 3;
+}
+
+.timeline-hashtags-no-image {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2.5rem; /* Make space for the date badge */
+    margin-bottom: 1rem;
+}
+
+.timeline-hashtags-no-image .tag {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .timeline-content h3 {
     font-size: 1rem;
     font-weight: 500;
@@ -827,16 +860,19 @@ body {
         display: none;
     }
     
+    .timeline-content {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Mobile date styles for timeline cards with image */
     .timeline-mobile-date {
         display: flex;
         align-items: center;
         gap: 0.25rem;
     }
     
-    .timeline-content {
-        width: 100%;
-        max-width: none;
-    }
+    /* No additional mobile-specific styles needed for no-image cards as they're handled in the main CSS */
 }
 
 /* Timeline Filtering - Removed */
@@ -1281,5 +1317,43 @@ body {
 @media (max-width: 767px) {
     .hero-content {
         min-height: auto;
+    }
+}
+
+/* Detail page header without image */
+.detail-header-no-image {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.detail-header-no-image h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--text-color);
+}
+
+.detail-header-no-image .detail-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .detail-header-no-image {
+        padding: 1.5rem;
+    }
+    
+    .detail-header-no-image h1 {
+        font-size: 1.5rem;
     }
 } 

@@ -59,39 +59,75 @@ function processTimelineFiles() {
     }
     
     // Create timeline item HTML
-    const timelineItem = `
-    <div class="timeline-item">
-        <div class="timeline-date">
-            <i class="fas fa-calendar"></i>
-            ${dateDisplay}
-        </div>
-        <div class="timeline-content">
-            <div class="timeline-image">
-                <img src="${attributes.image || 'img/placeholder.svg'}" alt="${attributes.title}">
-                <div class="timeline-image-overlay"></div>
-                <div class="timeline-mobile-date">
-                    <i class="fas fa-calendar"></i>
-                    ${dateDisplay}
-                </div>
-                <div class="timeline-hashtags">
-                    ${(attributes.tags || []).map(tag => `
-                    <span class="tag">
-                        <i class="fas fa-hashtag"></i>
-                        ${tag}
-                    </span>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="timeline-content-inner">
-                <h3>${attributes.title}</h3>
-                <p>${attributes.summary || ''}</p>
-                ${hasContent && attributes.detailPage ? `
-                <div class="timeline-footer">
-                  <a href="${attributes.detailPage}" class="read-more">Read more</a>
-                </div>` : ``}
-            </div>
-        </div>
-    </div>`;
+    let timelineItem;
+    
+    if (attributes.image) {
+      // With image (current design)
+      timelineItem = `
+      <div class="timeline-item">
+          <div class="timeline-date">
+              <i class="fas fa-calendar"></i>
+              ${dateDisplay}
+          </div>
+          <div class="timeline-content">
+              <div class="timeline-image">
+                  <img src="${attributes.image}" alt="${attributes.title}">
+                  <div class="timeline-image-overlay"></div>
+                  <div class="timeline-mobile-date">
+                      <i class="fas fa-calendar"></i>
+                      ${dateDisplay}
+                  </div>
+                  <div class="timeline-hashtags">
+                      ${(attributes.tags || []).map(tag => `
+                      <span class="tag">
+                          <i class="fas fa-hashtag"></i>
+                          ${tag}
+                      </span>
+                      `).join('')}
+                  </div>
+              </div>
+              <div class="timeline-content-inner">
+                  <h3>${attributes.title}</h3>
+                  <p>${attributes.summary || ''}</p>
+                  ${hasContent && attributes.detailPage ? `
+                  <div class="timeline-footer">
+                    <a href="${attributes.detailPage}" class="read-more">Read more</a>
+                  </div>` : ``}
+              </div>
+          </div>
+      </div>`;
+    } else {
+      // Without image (simpler design without background image)
+      timelineItem = `
+      <div class="timeline-item">
+          <div class="timeline-date">
+              <i class="fas fa-calendar"></i>
+              ${dateDisplay}
+          </div>
+          <div class="timeline-content">
+              <div class="timeline-content-inner no-image">
+                  <div class="timeline-mobile-date">
+                      <i class="fas fa-calendar"></i>
+                      ${dateDisplay}
+                  </div>
+                  <div class="timeline-hashtags-no-image">
+                      ${(attributes.tags || []).map(tag => `
+                      <span class="tag">
+                          <i class="fas fa-hashtag"></i>
+                          ${tag}
+                      </span>
+                      `).join('')}
+                  </div>
+                  <h3>${attributes.title}</h3>
+                  <p>${attributes.summary || ''}</p>
+                  ${hasContent && attributes.detailPage ? `
+                  <div class="timeline-footer">
+                    <a href="${attributes.detailPage}" class="read-more">Read more</a>
+                  </div>` : ``}
+              </div>
+          </div>
+      </div>`;
+    }
     
     // Use start_month for sorting, fallback to date for backward compatibility
     const dateStr = attributes.start_month || attributes.date;
@@ -120,6 +156,28 @@ function generateDetailPage(attributes, content, dateDisplay) {
   const detailPageDir = path.dirname(detailPagePath);
   
   fs.ensureDirSync(detailPageDir);
+  
+  const imageSection = attributes.image ? `
+                <div class="detail-image-container">
+                    <img src="${'../' + attributes.image}" alt="${attributes.title}" class="detail-image">
+                    <div class="detail-image-overlay"></div>
+                    <div class="detail-title-container">
+                        <div class="detail-date-badge">
+                            <i class="fas fa-calendar"></i>
+                            ${dateDisplay}
+                        </div>
+                        <h1>${attributes.title}</h1>
+                    </div>
+                </div>
+  ` : `
+                <div class="detail-header-no-image">
+                    <div class="detail-date-badge">
+                        <i class="fas fa-calendar"></i>
+                        ${dateDisplay}
+                    </div>
+                    <h1>${attributes.title}</h1>
+                </div>
+  `;
   
   const detailPageContent = `
 <!DOCTYPE html>
@@ -216,17 +274,7 @@ function generateDetailPage(attributes, content, dateDisplay) {
             
             <div id="detail-content" class="detail-content-wrapper">
                 <div class="detail-header">
-                    <div class="detail-image-container">
-                        <img src="${attributes.image ? '../' + attributes.image : '../img/placeholder.svg'}" alt="${attributes.title}" class="detail-image">
-                        <div class="detail-image-overlay"></div>
-                        <div class="detail-title-container">
-                            <div class="detail-date-badge">
-                                <i class="fas fa-calendar"></i>
-                                ${dateDisplay}
-                            </div>
-                            <h1>${attributes.title}</h1>
-                        </div>
-                    </div>
+                    ${imageSection}
                 </div>
                 
                 <div class="detail-meta">
