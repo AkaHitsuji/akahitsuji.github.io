@@ -49,12 +49,14 @@ body {
 
 /* Profile images */
 section img {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     z-index: -1;
+    object-fit: cover;
+    object-position: center;
 }
 
 @keyframes FadeInOut {
@@ -78,15 +80,10 @@ img.top {
     animation-iteration-count: infinite;
     animation-duration: 8s;
     animation-direction: alternate;
-    background-image: url(https://akahitsuji.github.io/img/testimg1.jpg);
-    background-size: cover;
-    background-position: center top;
 }
 
 img.bottom {
-    background-image: url(https://akahitsuji.github.io/img/testimg2.jpg);
-    background-size: cover;
-    background-position: center top;
+    /* Using actual image sources instead of background-image */
 }
 
 /* header */
@@ -144,13 +141,21 @@ img.bottom {
     border-color : #ffffff;
 }
 
-@media (max-width : 600px) {
+@media (max-width: 600px) {
     section img {
         z-index: 1;
+        height: 100%;  /* Full height of container */
+        width: 100%;   /* Full width */
+        object-fit: cover;
+        object-position: center;
     }
 
     .header-content {
         z-index: 2;
+    }
+    
+    .cover {
+        height: 100vh; /* Ensure full viewport height on mobile */
     }
 }
 
