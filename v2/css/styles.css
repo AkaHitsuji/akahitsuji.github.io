@@ -589,7 +589,7 @@ body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 3rem 0;
     width: 100%;
 }
 
@@ -606,20 +606,26 @@ body {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
 }
 
+.timeline-item:last-child {
+    margin-bottom: 2rem;
+}
+
 .timeline-item:nth-child(odd) {
     justify-content: flex-end;
-    padding-right: 1rem;
+    padding-right: 3rem;
+    padding-left: 0;
 }
 
 .timeline-item:nth-child(even) {
     justify-content: flex-start;
-    padding-left: 1rem;
+    padding-left: 3rem;
+    padding-right: 0;
 }
 
 /* Timeline dot */
@@ -650,6 +656,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     z-index: 2;
+    white-space: nowrap;
 }
 
 .timeline-item:nth-child(odd) .timeline-date {
@@ -661,8 +668,8 @@ body {
 }
 
 .timeline-content {
-    width: calc(50% - 2rem);
-    max-width: 600px;
+    width: 100%;
+    max-width: 450px;
     background-color: var(--background-color);
     border: 2px solid var(--primary-color-light);
     border-radius: 0.75rem;
@@ -670,6 +677,21 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     z-index: 2;
+}
+
+/* For large screens, make the timeline even more spacious */
+@media (min-width: 1200px) {
+    .timeline-item:nth-child(odd) {
+        padding-right: 4rem;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 4rem;
+    }
+    
+    .timeline-content {
+        max-width: 500px;
+    }
 }
 
 .timeline-content:hover {
@@ -1394,4 +1416,26 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .timeline-item:nth-child(odd) {
+        padding-right: 2.5rem;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-content {
+        max-width: 400px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date {
+        right: calc(50% + 1.5rem);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        left: calc(50% + 1.5rem);
+    }
 } 
