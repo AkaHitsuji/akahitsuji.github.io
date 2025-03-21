@@ -1356,4 +1356,24 @@ body {
     .detail-header-no-image h1 {
         font-size: 1.5rem;
     }
+}
+
+/* New class for hashtags at the bottom */
+.timeline-hashtags-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-hashtags-bottom .tag {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 } 

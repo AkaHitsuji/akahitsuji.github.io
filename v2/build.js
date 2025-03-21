@@ -77,7 +77,11 @@ function processTimelineFiles() {
                       <i class="fas fa-calendar"></i>
                       ${dateDisplay}
                   </div>
-                  <div class="timeline-hashtags">
+              </div>
+              <div class="timeline-content-inner">
+                  <h3>${attributes.title}</h3>
+                  <p>${attributes.summary || ''}</p>
+                  <div class="timeline-hashtags-bottom">
                       ${(attributes.tags || []).map(tag => `
                       <span class="tag">
                           <i class="fas fa-hashtag"></i>
@@ -85,10 +89,6 @@ function processTimelineFiles() {
                       </span>
                       `).join('')}
                   </div>
-              </div>
-              <div class="timeline-content-inner">
-                  <h3>${attributes.title}</h3>
-                  <p>${attributes.summary || ''}</p>
                   ${hasContent && attributes.detailPage ? `
                   <div class="timeline-footer">
                     <a href="${attributes.detailPage}" class="read-more">Read more</a>
@@ -110,7 +110,9 @@ function processTimelineFiles() {
                       <i class="fas fa-calendar"></i>
                       ${dateDisplay}
                   </div>
-                  <div class="timeline-hashtags-no-image">
+                  <h3>${attributes.title}</h3>
+                  <p>${attributes.summary || ''}</p>
+                  <div class="timeline-hashtags-bottom">
                       ${(attributes.tags || []).map(tag => `
                       <span class="tag">
                           <i class="fas fa-hashtag"></i>
@@ -118,8 +120,6 @@ function processTimelineFiles() {
                       </span>
                       `).join('')}
                   </div>
-                  <h3>${attributes.title}</h3>
-                  <p>${attributes.summary || ''}</p>
                   ${hasContent && attributes.detailPage ? `
                   <div class="timeline-footer">
                     <a href="${attributes.detailPage}" class="read-more">Read more</a>
