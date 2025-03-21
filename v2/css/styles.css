@@ -664,7 +664,7 @@ body {
     width: calc(50% - 2rem);
     max-width: 600px;
     background-color: var(--background-color);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--primary-color-light);
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
