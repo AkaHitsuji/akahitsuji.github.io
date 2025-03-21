@@ -69,30 +69,32 @@ function processTimelineFiles() {
               <i class="fas fa-calendar"></i>
               ${dateDisplay}
           </div>
-          <div class="timeline-content">
-              <div class="timeline-image">
-                  <img src="${attributes.image}" alt="${attributes.title}">
-                  <div class="timeline-image-overlay"></div>
-                  <div class="timeline-mobile-date">
-                      <i class="fas fa-calendar"></i>
-                      ${dateDisplay}
-                  </div>
+          <div class="timeline-mobile-container">
+              <div class="timeline-mobile-date">
+                  <i class="fas fa-calendar"></i>
+                  ${dateDisplay}
               </div>
-              <div class="timeline-content-inner">
-                  <h3>${attributes.title}</h3>
-                  <p>${attributes.summary || ''}</p>
-                  <div class="timeline-hashtags-bottom">
-                      ${(attributes.tags || []).map(tag => `
-                      <span class="tag">
-                          <i class="fas fa-hashtag"></i>
-                          ${tag}
-                      </span>
-                      `).join('')}
+              <div class="timeline-content">
+                  <div class="timeline-image">
+                      <img src="${attributes.image}" alt="${attributes.title}">
+                      <div class="timeline-image-overlay"></div>
                   </div>
-                  ${hasContent && attributes.detailPage ? `
-                  <div class="timeline-footer">
-                    <a href="${attributes.detailPage}" class="read-more">Read more</a>
-                  </div>` : ``}
+                  <div class="timeline-content-inner">
+                      <h3>${attributes.title}</h3>
+                      <p>${attributes.summary || ''}</p>
+                      <div class="timeline-hashtags-bottom">
+                          ${(attributes.tags || []).map(tag => `
+                          <span class="tag">
+                              <i class="fas fa-hashtag"></i>
+                              ${tag}
+                          </span>
+                          `).join('')}
+                      </div>
+                      ${hasContent && attributes.detailPage ? `
+                      <div class="timeline-footer">
+                        <a href="${attributes.detailPage}" class="read-more">Read more</a>
+                      </div>` : ``}
+                  </div>
               </div>
           </div>
       </div>`;
@@ -104,26 +106,28 @@ function processTimelineFiles() {
               <i class="fas fa-calendar"></i>
               ${dateDisplay}
           </div>
-          <div class="timeline-content">
-              <div class="timeline-content-inner no-image">
-                  <div class="timeline-mobile-date">
-                      <i class="fas fa-calendar"></i>
-                      ${dateDisplay}
+          <div class="timeline-mobile-container">
+              <div class="timeline-mobile-date">
+                  <i class="fas fa-calendar"></i>
+                  ${dateDisplay}
+              </div>
+              <div class="timeline-content">
+                  <div class="timeline-content-inner no-image">
+                      <h3>${attributes.title}</h3>
+                      <p>${attributes.summary || ''}</p>
+                      <div class="timeline-hashtags-bottom">
+                          ${(attributes.tags || []).map(tag => `
+                          <span class="tag">
+                              <i class="fas fa-hashtag"></i>
+                              ${tag}
+                          </span>
+                          `).join('')}
+                      </div>
+                      ${hasContent && attributes.detailPage ? `
+                      <div class="timeline-footer">
+                        <a href="${attributes.detailPage}" class="read-more">Read more</a>
+                      </div>` : ``}
                   </div>
-                  <h3>${attributes.title}</h3>
-                  <p>${attributes.summary || ''}</p>
-                  <div class="timeline-hashtags-bottom">
-                      ${(attributes.tags || []).map(tag => `
-                      <span class="tag">
-                          <i class="fas fa-hashtag"></i>
-                          ${tag}
-                      </span>
-                      `).join('')}
-                  </div>
-                  ${hasContent && attributes.detailPage ? `
-                  <div class="timeline-footer">
-                    <a href="${attributes.detailPage}" class="read-more">Read more</a>
-                  </div>` : ``}
               </div>
           </div>
       </div>`;

@@ -865,14 +865,32 @@ body {
         max-width: none;
     }
     
-    /* Mobile date styles for timeline cards with image */
+    /* Mobile date styles - moved outside the card */
     .timeline-mobile-date {
         display: flex;
         align-items: center;
         gap: 0.25rem;
+        position: static;
+        margin-bottom: 0.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 0.75rem;
+        width: fit-content;
     }
     
-    /* No additional mobile-specific styles needed for no-image cards as they're handled in the main CSS */
+    /* Remove top padding from timeline content inner to accommodate external date */
+    .timeline-content-inner.no-image {
+        padding-top: 1rem;
+    }
+    
+    /* Container to hold the card and date for mobile view */
+    .timeline-mobile-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 /* Timeline Filtering - Removed */
